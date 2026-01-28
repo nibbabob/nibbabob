@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NibbaBob - WE MAKIN IT OUT THE HOOD 🔥</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ADDED: Countdown Styles */
+        #countdown-box {
+            background: rgba(0, 0, 0, 0.8);
+            border: 3px solid #ffd700;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 600px;
+            display: flex; /* Flex enabled by default */
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+        #timer {
+            font-size: clamp(30px, 5vw, 60px);
+            font-weight: 900;
+            color: #fff;
+            font-family: monospace;
+            text-shadow: 0 0 20px #ff006e;
+        }
+        .countdown-label {
+            color: #ffd700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        /* Hide buy buttons initially */
+        #launch-controls {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="noise"></div>
+    <div class="gradient-bg"></div>
+    
+    <div class="container">
+        <nav>
+            <div class="logo-text">$NIBBABOB</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            
+            <div class="nav-links">
+                <a href="#hood">The Hood</a>
+                <a href="#streets">The Streets</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#community">Gang</a>
+                <a href="#" class="btn" id="nav-buy-btn" style="display:none">Ape In Now</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="street-badge">🐄 COW MILKED WHILE FLYING DAY ✈️</div>
+            <h1>WE MAKIN IT<br>OUT THE HOOD<br>WITH THIS ONE 🔥</h1>
+            <p class="hero-subtitle">🍔 KRUSTY KRAB MONEY ➡️ LAMBO MONEY 🏎️</p>
+            
+            <div class="character-container">
+                <div class="glow-orb"></div>
+                <div class="money-emoji money-1">💵</div>
+                <div class="money-emoji money-2">💰</div>
+                <div class="money-emoji money-3">🤑</div>
+                <div class="money-emoji money-4">💎</div>
+                <div class="character">
+                    <img id="nibbabob-char" src="static/bob.png" alt="NibbaBob" style="width: 100%; max-width: 350px; height: auto;">
+                </div>
+            </div>
+
+            <div id="countdown-box">
+                <div class="countdown-label">🚀 LAUNCHING ON COW MILKED IN AIRPLANE DAY 🚀</div>
+                <div id="timer">LOADING...</div>
+            </div>
+
+            <div class="cta-buttons" id="launch-controls">
+                <a href="#" class="btn-primary" id="hero-buy-btn">🚀 BUY $NIBBABOB 🚀</a>
+                <a href="#" class="btn-secondary" id="hero-chart-btn">📊 CHECK CHART 📊</a>
+            </div>
+            
+            <div class="ca-container" onclick="copyToClipboard()" id="ca-container-box" style="display:none;">
+                <span id="ca-text">CA: LOADING...</span>
+                <span class="copy-icon">📋</span>
+            </div>
+            <div id="copy-toast">Copied to clipboard!</div>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">1B</div>
+                <div class="stat-label">🍔 Total Supply</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">1%</div>
+                <div class="stat-label">🥤 Sip for Patrick</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">🤝 Da Gang</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">🔥</div>
+                <div class="stat-label">LP Burned</div>
+            </div>
+        </div>
+
+        <div class="hood-banner">
+            <h3>🏚️ THE BIKINI BOTTOM STRUGGLE IS REAL 🏚️</h3>
+            <p>SpongeBob been flippin' patties for years at the Krusty Krab, slavin' for Mr. Krabs' pocket change. But not anymore! We bout to flip this blockchain instead and get that GENERATIONAL WEALTH. No more livin' in a pineapple under the sea - we movin' to the PENTHOUSE! 💎🙌</p>
+        </div>
+
+        <div class="ticker-container">
+            <div class="ticker">
+                <span class="ticker-item">💎 DIAMOND FLIPPERS</span>
+                <span class="ticker-item">🍑 PATRICK WORKING THE CORNER</span>
+                <span class="ticker-item">🍔 KRABBY PATTY FORMULA = CRYPTO GAINS</span>
+                <span class="ticker-item">💸 WILL TWERK FOR GAS FEES</span>
+                <span class="ticker-item">🔥 LP SENT TO DAVY JONES LOCKER</span>
+                <span class="ticker-item">🚀 ESCAPING BIKINI BOTTOM</span>
+                <span class="ticker-item">💰 FROM FRYCOOK TO RICH</span>
+                <span class="ticker-item">🏎️ BOAT MOBILE TO LAMBO</span>
+            </div>
+        </div>
+
+        <section class="features-section" id="hood">
+            <h2 class="section-title">🔥 WHY WE DIFFERENT 🔥</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔥</div>
+                    <h3 class="feature-title">LP BURNED FR FR</h3>
+                    <p class="feature-description">We sent that liquidity straight to the DEPTHS. No rug pulls, no funny business. We locked in harder than SpongeBob at his driving test. This ain't no pump and dump - we building generational wealth out here! 💯</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">COMMUNITY OWNED GANG</h3>
+                    <p class="feature-description">Contract RENOUNCED like Mr. Krabs gave up money (it'll never happen but we did it anyway). Zero team allocation. This is BY the streets, FOR the streets. We all eating together or starving together! 🍔🤝</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3 class="feature-title">DIAMOND FLIPPERS</h3>
+                    <p class="feature-description">Hands made of pure compressed carbon. We holding through the dips, the FUD, and the Plankton schemes. If you got paper hands, stay at the Chum Bucket. We going to the moon! 💎🙌</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="streets">
+            <h2 class="story-title">💔 TRAGEDY OF P-STAR 💔</h2>
+            <div class="story-content">
+                <p class="story-text">
+                    Y'all think the hood is easy? Ask Patrick. Bro spent his entire life savings on leverage trading 100x shorts on $PLANKTON coin. He got liquidated faster than a Krabby Patty at lunch rush.
+                </p>
+                
+                <div style="margin: 30px 0; position: relative;">
+                    <img src="static/pat.jpg" alt="Patrick Star" style="max-width: 300px; width: 100%; height: auto; border-radius: 20px; border: 3px solid #ff006e; filter: drop-shadow(0 10px 30px rgba(255, 0, 110, 0.5));">
+                </div>
+                
+                <div class="emoji-divider">👙💙💎</div>
+                <p class="story-text">
+                    Now he's out on Conch Street <strong>selling that starfish body for liquidity</strong>. He doing unthinkable things for 0.01 ETH behind the Chum Bucket. He down BAD bad. 
+                </p>
+                <p class="story-text" style="color: #ffd700; font-weight: 800; font-style: italic;">
+                    "Will shake it for gas fees." – P-Star
+                </p>
+                <p class="story-text">
+                    Every $NIBBABOB you buy saves Patrick from another night on the pole. Let's get this man out the streets and into a LAMBO. 🎏️
+                </p>
+            </div>
+        </section>
+
+        <section class="tokenomics" id="tokenomics">
+            <h2 class="section-title">📊 THE KRABBY NOMICS 📊</h2>
+            <div class="tokenomics-grid">
+                <div class="token-item">
+                    <div class="token-label">Total Supply</div>
+                    <div class="token-value">1 BILLION</div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Liquidity</div>
+                    <div class="token-value">BURNED 🔥</div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Tax</div>
+                    <div class="token-value">0/0</div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Contract Status</div>
+                    <div class="token-value">RENOUNCED</div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="community">
+            <h2 class="section-title">JOIN THE GANG</h2>
+            <div class="social-links">
+                <a href="https://x.com/Nibbabobcoin" class="social-link" target="_blank">🐦</a> 
+                <a href="https://t.me/nibbabobofficial" class="social-link" target="_blank">✈️</a> 
+                <a href="#" class="social-link" id="footer-chart-btn" target="_blank">📊</a> 
+            </div>
+            <p class="footer-text">
+                $NIBBABOB is a meme coin with no intrinsic value or expectation of financial return. 
+                <br>There is no formal team or roadmap. The coin is completely useless and for entertainment purposes only.
+                <br><br>
+                © 2026 NIBBABOB. ALL RIGHTS RESERVED (BITCH).
+            </p>
+        </footer>
+    </div> 
+    
+    <a href="https://t.me/nibbabobofficial" class="mobile-sticky-btn">
+        JOIN THE GANG ✈️
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
